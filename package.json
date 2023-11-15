@@ -6,6 +6,8 @@
   "scripts": {
     "start-html-version": "browser-sync start --config bs-config.js",
     "start": "react-scripts start",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,6 +43,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+      
     ]
   }
 }
