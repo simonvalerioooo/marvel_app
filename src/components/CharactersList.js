@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 
 export function CharactersList({ characters = [] }) {
     return (
@@ -6,11 +7,15 @@ export function CharactersList({ characters = [] }) {
             {characters.map((character) => (
                 <li key={character.id}>
                     <Link to={`/characters/${character.id}`}>
-                        {character.name}
+                        <strong>{character.name}</strong>
                     </Link>
+                    <span> - {formatDate(new Date(character.modified))}</span>
                 </li>
             ))}
         </ul>
     );
 }
 
+function formatDate(date) {
+    return format(date, "MMMM dd, yyyy");
+}
